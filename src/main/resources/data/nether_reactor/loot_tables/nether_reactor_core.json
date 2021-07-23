@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "nether_reactor_core",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "nether_reactor:nether_reactor_core"
+        }
+      ]
+    }
+  ]
+}
