@@ -1,3 +1,7 @@
 {
-  "block.nether_reactor.nether_reactor_core": "Nether Reactor Core"
+  "block.nether_reactor.nether_reactor_core": "Nether Reactor Core",
+  "block.nether_reactor.glowing_obsidian": "Glowing obsidian",
+  "msg.nether_reactor.active": "Active!",
+  "msg.nether_reactor.ncp": "Not the correct pattern!",
+  "msg.nether_reactor.hor": "The nether reactor core height should be between 6 and 216!"
 }

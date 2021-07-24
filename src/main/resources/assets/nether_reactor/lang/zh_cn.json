@@ -1,3 +1,7 @@
 {
-  "block.nether_reactor.nether_reactor_core": "下届反应核"
+  "block.nether_reactor.nether_reactor_core": "下界反应核",
+  "block.nether_reactor.glowing_obsidian": "发光的黑曜石",
+  "msg.nether_reactor.active": "激活！",
+  "msg.nether_reactor.ncp": "下界反应堆组装方式错误！",
+  "msg.nether_reactor.hor": "下界反应核高度应在6-216之间"
 }

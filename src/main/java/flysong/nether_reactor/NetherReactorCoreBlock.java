@@ -16,6 +16,7 @@ import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -75,18 +76,22 @@ public class NetherReactorCoreBlock extends Block {
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if (worldIn.isRemote || handIn != Hand.MAIN_HAND)
             return ActionResultType.PASS;
+        if (pos.getY() <= 5 || pos.getY() >= 217) {
+            player.sendMessage(new TranslationTextComponent("msg.nether_reactor.hor"), Util.DUMMY_UUID);
+            return ActionResultType.FAIL;
+        }
         for (int i = -1 ; i <= 1 ; i ++) { //x axis
             for (int j = -1 ; j <= 1 ; j ++) { //y axis
                 for (int k = -1 ; k <= 1 ; k ++) { // z axis
                     if (! worldIn.getBlockState(pos.add(i, j, k)).toString().equals(
                             NetherReactors.REACTOR_STRUCTURE[j + 1][k + 1][i + 1].toString())) {
-                        player.sendMessage(new StringTextComponent("Not the correct pattern!"), Util.DUMMY_UUID);
+                        player.sendMessage(new TranslationTextComponent("msg.nether_reactor.ncp"), Util.DUMMY_UUID);
                         return ActionResultType.FAIL;
                     }
                 }
             }
         }
-        player.sendMessage(new StringTextComponent("Active!"), Util.DUMMY_UUID);
+        player.sendMessage(new TranslationTextComponent("msg.nether_reactor.active"), Util.DUMMY_UUID);
         for (int i = -1 ; i <= 1 ; i ++) {
             for (int j = -1 ; j <= 1 ; j ++) {
                 worldIn.setBlockState(pos.add(i, -1, j), NetherReactor.BlockRegistry.GLOWING_OBSIDIAN.get().getDefaultState());

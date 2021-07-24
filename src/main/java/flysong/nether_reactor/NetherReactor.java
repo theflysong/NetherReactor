@@ -48,6 +48,7 @@ public class NetherReactor {
         public static DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
         public static RegistryObject<Item> NETHER_REACTOR_CORE = REGISTER.register("nether_reactor_core", ()->new BlockItem(BlockRegistry.NETHER_REACTOR_CORE.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+        public static RegistryObject<Item> GLOWING_OBSIDIAN = REGISTER.register("glowing_obsidian", ()->new BlockItem(BlockRegistry.GLOWING_OBSIDIAN.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
     }
 
     public static class BlockRegistry {
