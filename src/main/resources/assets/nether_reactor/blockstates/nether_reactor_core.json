@@ -1,7 +1,20 @@
 {
-  "variants": {
-    "": {
-      "model": "nether_reactor:block/nether_reactor_core"
+  "multipart": [
+    {
+      "when": {
+        "stage": "0"
+      },
+      "apply": {
+        "model": "nether_reactor:block/nether_reactor_core"
+      }
+    },
+    {
+      "when": {
+        "stage": "1"
+      },
+      "apply": {
+        "model": "nether_reactor:block/glowing_obsidian"
+      }
     }
-  }
+  ]
 }

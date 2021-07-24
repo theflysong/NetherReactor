@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "nether_reactor:block/glowing_obsidian"
+    }
+  }
+}
